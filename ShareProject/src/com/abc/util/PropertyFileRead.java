@@ -16,7 +16,7 @@ public class PropertyFileRead {
 
 	
 	
-	Properties PropDetails = new Properties();
+	static Properties PropDetails = new Properties();
 	InputStream input = null;
 	OutputStream output = null;
 	
@@ -28,7 +28,7 @@ public class PropertyFileRead {
 	 * @param: ObName- Object to be read from the file
 	 * @return: ObValue - Value of the Object read from file
 	 * ***********************************************************/
-	public String FileRead(String FileName, String ObName)
+	public static String FileRead(String FileName, String ObName)
 	{
 		try {
 			 System.out.println("Filename =" + FileName );
