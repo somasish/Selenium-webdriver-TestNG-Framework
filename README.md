@@ -35,3 +35,5 @@ This is a page object model framework. Below are the features that are incorpora
 
 13) QC, Bugzilla,Jira and Rally Integartion - Yet to Start
 
+14) Email Connection - Yet to Start
+
