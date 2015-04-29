@@ -20,6 +20,7 @@ import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
+
 public class SeleniumRepo {
 	public static WebElement webelement;
 	public static List<WebElement> webelements = null;
@@ -337,7 +338,7 @@ public static boolean SwitchAlert() {
 	 * @param propertyType
 	 * @param propertyValue
 	 */
-	public void mousehovering(String propertyType, String propertyValue) {
+	public void mousehovering(String locator) {
 		/*
 		 * WebElement a = inspect(propertyType, propertyValue); if (a != null) {
 		 * Actions ab = new Actions(driver);
@@ -347,10 +348,107 @@ public static boolean SwitchAlert() {
 		 * driver.getWindowHandles()) { driver.switchTo().window(handle); //
 		 * control is on new window ,Can perform actions on that }
 		 */
-		
+		WebElement mouseOverElement = findElement(locator);
 		Actions builder = new Actions(driver);  // Configure the Action    
-		 Action mouseOver =builder.moveToElement(element).build(); // Get the action    
+		 Action mouseOver =builder.moveToElement(mouseOverElement).build(); // Get the action    
 		 mouseOver.perform(); // Execute the Action 
 	}
+/**
+ * @author somasish
+ * @param locator of the Web Element
+ * @param attributeName
+ * @return attributeValue
+ */
+	public static String getAttribute(String locator, String attributeName) {
+		String attributeValue = null;
+		try {
 
+			WebElement element = SeleniumRepo.findElement(locator);
+			if (element != null)
+				attributeValue = element.getAttribute(attributeName);
+			element = null;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return attributeValue;
+	}
+	
+	/**
+	 * @author somasish
+	 * @param locator of the Element to be cleared
+	 */
+	public static void clearElement(String locator) {
+			try {
+
+			WebElement element = SeleniumRepo.findElement(locator);
+			 element.clear();
+			 element = null;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+			
+	}
+	/**
+	 * @author somasish
+	 * @param locator
+	 * @param value
+	 */
+	public static void enterText(String locator, String value) {
+
+		try {
+
+			WebElement element = SeleniumRepo.findElement(locator);
+			element.sendKeys(value);
+			element = null;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	/**
+	 * @author somasish
+	 * @param locator of Element to be clicked
+	 */
+	public static void click(String locator) {
+		try {
+			WebElement element = SeleniumRepo.findElement(locator);
+			if (element != null)
+				element.click();
+			else
+				System.out.println("Element Is NULL");
+			element = null;		
+
+		} catch (Exception e) {
+			System.out.println(" Error occured whlie click on the element "
+					+ locator + " *** " + e.getMessage());
+			
+		}
+		
+	}
+	
+	/**
+	 * @author somasish
+	 * @param locator
+	 * @return Text/value of the Element
+	 */
+	public static String getElementText(String locator) {
+		WebElement element;
+		String text = null;
+		try {
+			element = SeleniumRepo.findElement(locator);
+			if (element != null)
+				
+				text = element.getText();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		element = null;
+
+		return text;
+	}
+	
+	
 }

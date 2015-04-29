@@ -37,8 +37,7 @@ public class PropertyFileRead {
 				 
 			// load a properties file
 			PropDetails.load(FilePath);
-	 
-		
+			
 	 
 		} catch (IOException ex) {
 			ex.printStackTrace();
