@@ -27,9 +27,9 @@ public class DBConnection {
         try {
                Class.forName(PropertyFileRead.FileRead("DBDetails.properties","jdbcDriver"));
                conn = DriverManager.getConnection(
-            		   PropertyFileRead.FileRead("DBDetails.properties","jdbcDriverUrl"),
-            		   PropertyFileRead.FileRead("DBDetails.properties","DatabaseUsername"),
-            		   PropertyFileRead.FileRead("DBDetails.properties","DatabasePassword"));
+            		   PropertyFileRead.FileRead("DBDetail.properties","jdbcDriverUrl"),
+            		   PropertyFileRead.FileRead("DBDetail.properties","DatabaseUsername"),
+            		   PropertyFileRead.FileRead("DBDetail.properties","DatabasePassword"));
                statement = conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,
                             ResultSet.CONCUR_UPDATABLE);
                System.out.println(" query :::"+query);
@@ -83,9 +83,9 @@ public class DBConnection {
         try {
         	Class.forName(PropertyFileRead.FileRead("DBDetails.properties","jdbc.driver"));
             conn = DriverManager.getConnection(
-         		   PropertyFileRead.FileRead("DBDetails.properties","jdbc.driver.url"),
-         		   PropertyFileRead.FileRead("DBDetails.properties","DatabaseUsername"),
-         		   PropertyFileRead.FileRead("DBDetails.properties","DatabasePassword"));
+         		   PropertyFileRead.FileRead("DBDetail.properties","jdbc.driver.url"),
+         		   PropertyFileRead.FileRead("DBDetail.properties","DatabaseUsername"),
+         		   PropertyFileRead.FileRead("DBDetail.properties","DatabasePassword"));
                statement = conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,
                             ResultSet.CONCUR_UPDATABLE);
                res = statement.executeQuery(query);

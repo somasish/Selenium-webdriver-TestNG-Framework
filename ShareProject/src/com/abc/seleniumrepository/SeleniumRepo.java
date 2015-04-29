@@ -94,8 +94,8 @@ public static WebDriver startBrowser(String browserName, String url, boolean Fir
 
 public static WebDriver proxySetting()
 {
-	String serverIP=PropertyFileRead.FileRead("DBDetails.properties","proxyHort"); 
-	String port= PropertyFileRead.FileRead("DBDetails.properties","proxyPort");
+	String serverIP=PropertyFileRead.FileRead("DBDetail.properties","proxyHort"); 
+	String port= PropertyFileRead.FileRead("DBDetail.properties","proxyPort");
 	WebDriver newDriver;
 	FirefoxProfile profile = new FirefoxProfile();  
 profile.setPreference("network.proxy.type",1);  

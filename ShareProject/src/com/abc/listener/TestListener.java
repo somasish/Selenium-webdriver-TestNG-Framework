@@ -30,8 +30,8 @@ super();
 		public void onStart(ITestContext testContext) {
 	System.out.println("Execution Starts");
 	//Load the Property files
-	String DBUserName = PropertyFileRead.FileRead("DBDetails.properties","DatabaseUsername");
-	String DBPassword = PropertyFileRead.FileRead("DBDetails.properties","DatabasePassword");
+	String DBUserName = PropertyFileRead.FileRead("DBDetail.properties","DatabaseUsername");
+	String DBPassword = PropertyFileRead.FileRead("DBDetail.properties","DatabasePassword");
 	
 	
 }

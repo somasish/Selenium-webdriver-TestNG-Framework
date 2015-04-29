@@ -50,8 +50,7 @@ public class XMLFileGeneration {
 		attr = doc.createAttribute("preserve-order");
 		attr.setValue("true");
 		test.setAttributeNode(attr);
-		// shorten way
-		// staff.setAttribute("id", "1");
+		
  
 		// firstname elements
 		Element classes = doc.createElement("classes");
@@ -100,7 +99,7 @@ public class XMLFileGeneration {
 		StreamResult result = new StreamResult(new File(System.getProperty("user.dir")+"/testNGxml.xml"));
  
 		// Output to console for testing
-		// StreamResult result = new StreamResult(System.out);
+	
  
 		transformer.transform(source, result);
  
