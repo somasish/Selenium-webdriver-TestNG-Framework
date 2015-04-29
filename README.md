@@ -7,11 +7,11 @@ This is a page object model framework. Below are the features that are incorpora
 
 2) Data are read from Oracle Database. - Completed and Commited
 
-    i)Database Connection
+        i)Database Connection
     
-    ii)Oracle DB Read
+        ii)Oracle DB Read
     
-    iii) Oracle DB Write
+        iii) Oracle DB Write
 
 3) Read and Write from Excel File-Completed and Commited
 
