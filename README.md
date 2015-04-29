@@ -3,7 +3,7 @@ Selenium TestNG Framework
 
 This is a page object model framework. Below are the features that are incorporated and their status.
 
-1) Page Modeling Example of Google.com and yahoo.co.in- Yet to Start
+1) Page Modeling Example with Scripts of Google.com and yahoo.co.in- Yet to Start
 
 2) Data are read from Oracle Database. - Completed and Commited
 
