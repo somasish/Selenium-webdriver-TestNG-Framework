@@ -44,3 +44,5 @@ This is a page object model framework. Below are the features that are incorpora
 17) TestNg Annotations and DataProvider - Yet to Start 
 
 18) Selenium Grid Implementation- Yet to Start
+
+19) Reading a Response XML- Yet to Start
