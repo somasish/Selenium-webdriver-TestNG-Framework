@@ -1,4 +1,4 @@
-package com.abc.util;
+package com.abc.seleniumrepository;
 
 import java.io.File;
 import java.io.IOException;
@@ -19,6 +19,8 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
+
+import com.abc.util.PropertyFileRead;
 
 
 public class SeleniumRepo {
@@ -339,15 +341,7 @@ public static boolean SwitchAlert() {
 	 * @param propertyValue
 	 */
 	public void mousehovering(String locator) {
-		/*
-		 * WebElement a = inspect(propertyType, propertyValue); if (a != null) {
-		 * Actions ab = new Actions(driver);
-		 * ab.moveToElement(a).build().perform(); ab.perform(); } }
-		 * 
-		 * public void windowSwitch() { for (String handle :
-		 * driver.getWindowHandles()) { driver.switchTo().window(handle); //
-		 * control is on new window ,Can perform actions on that }
-		 */
+		
 		WebElement mouseOverElement = findElement(locator);
 		Actions builder = new Actions(driver);  // Configure the Action    
 		 Action mouseOver =builder.moveToElement(mouseOverElement).build(); // Get the action    
