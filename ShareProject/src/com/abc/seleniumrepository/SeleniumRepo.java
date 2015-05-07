@@ -23,6 +23,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import com.abc.util.PropertyFileRead;
 
 
+
 public class SeleniumRepo {
 	public static WebElement webelement;
 	public static List<WebElement> webelements = null;
@@ -38,7 +39,7 @@ public class SeleniumRepo {
 	 * @throws UnknownHostException
 	 */
 	
-public static WebDriver startBrowser(String browserName, String url, boolean FirefoxBrowserProxy)
+public static WebDriver startBrowser(String browserName, boolean FirefoxBrowserProxy)
 			throws UnknownHostException {
 	
 		deleteTempFile();
@@ -57,10 +58,7 @@ public static WebDriver startBrowser(String browserName, String url, boolean Fir
 					System.getProperty("user.dir") + "\\IEDriverServer.exe");
 			DesiredCapabilities capabilities = DesiredCapabilities
 					.internetExplorer();
-			capabilities
-					.setCapability(
-							InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,
-							true);
+			capabilities.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,true);
 			capabilities.setCapability("ignoreZoomSetting", true);
 			driver = new InternetExplorerDriver(capabilities);
 		} else if (browserName.equalsIgnoreCase("chrome")) {
@@ -70,9 +68,7 @@ public static WebDriver startBrowser(String browserName, String url, boolean Fir
 		driver.manage().timeouts()
 				.implicitlyWait(defaultBrowserTimeOut, TimeUnit.SECONDS);
 		driver.manage().deleteAllCookies();
-		driver.manage().window().maximize();
-		driver.get(url);
-		// driver.switchTo().alert().dismiss();
+		
 		if (browserName.equalsIgnoreCase("iexplorer"))
 			SeleniumRepo.SwitchAlert();
 
@@ -444,5 +440,7 @@ public static boolean SwitchAlert() {
 		return text;
 	}
 	
-	
+	public static void driverInitialize(WebDriver webDriver) {
+		SeleniumRepo.driver = webDriver;
+	}
 }

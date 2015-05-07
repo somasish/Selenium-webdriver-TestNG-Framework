@@ -1,1 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><suite name="Suite" parallel="none"><test name="Test" preserve-order="true"><classes><class name="com.abc.testscript.javafile"><methods><include name="MethodName"/></methods></class></classes></test></suite>
