@@ -33,7 +33,15 @@ This is a page object model framework. Below are the features that are incorpora
 
 12) HTML End Report Generation- Yet to Start
 
-13) QC, Bugzilla,Jira and Rally Integartion - Yet to Start
+13) Bug Tracking Tool integration - Yet to Start
+        
+        i) QC
+        
+        ii) Bugzilla
+        
+        iii) Rally
+        
+        iv) Jira
 
 14) Email Connection - Completed and Committed
 
