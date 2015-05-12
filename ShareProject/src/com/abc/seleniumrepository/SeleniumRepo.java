@@ -24,6 +24,7 @@ import com.abc.util.PropertyFileRead;
 
 
 
+
 public class SeleniumRepo {
 	public static WebElement webelement;
 	public static List<WebElement> webelements = null;
@@ -442,5 +443,13 @@ public static boolean SwitchAlert() {
 	
 	public static void driverInitialize(WebDriver webDriver) {
 		SeleniumRepo.driver = webDriver;
+	}
+	
+	public static void GoToUrl(String url) {
+		try {
+			driver.get(url);
+			} catch (Exception e) {
+
+		}
 	}
 }

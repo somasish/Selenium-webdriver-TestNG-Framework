@@ -27,6 +27,16 @@ import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 
 public class EmailReport {
+	
+	/**
+	 * @author somasish
+	 * @param from
+	 * @param pass
+	 * @param to
+	 * @param subject
+	 * @param body
+	 * Email connection and mail HTML Report
+	 */
 	private static void MailHTMLReportByGMail(String from, String pass, String to, String subject, String body) {
 		 
 		Properties props = System.getProperties();
@@ -73,7 +83,7 @@ public class EmailReport {
 		 
 		objMessageBodyPart = new MimeBodyPart();
 		 
-		//Set path to the pdf report file
+		//Set path to the HTML report file
 		 
 		String filename = System.getProperty("user.dir")+"\\test.html";
 		 

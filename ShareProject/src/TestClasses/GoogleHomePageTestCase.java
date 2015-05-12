@@ -19,6 +19,7 @@ public class GoogleHomePageTestCase {
 	@Test
 	public void SearchTest()
 	{
+		SeleniumRepo.GoToUrl(PropertyFileRead.FileRead("ProjectData.properties","GoogleSiteURL"));
 		
 	}
 	
