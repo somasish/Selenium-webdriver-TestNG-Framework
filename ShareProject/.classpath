@@ -8,5 +8,7 @@
 	<classpathentry kind="lib" path="C:/jars/poi-ooxml-3.5-FINAL.jar"/>
 	<classpathentry kind="lib" path="C:/jars/poi-ooxml-schemas-3.7.jar"/>
 	<classpathentry kind="lib" path="C:/jars/java-mail-1.4.4.jar"/>
+	<classpathentry kind="lib" path="C:/jars/com4j.jar"/>
+	<classpathentry kind="lib" path="C:/jars/com.mercury.qualitycenter.otaclient-9.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
