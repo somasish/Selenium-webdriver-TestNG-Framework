@@ -89,14 +89,13 @@ public class XMLFileGeneration {
 				attr.setValue("com.abc.listener.TestListener");
 				listener.setAttributeNode(attr);
 				
-				
-		// salary elements
+	
 	
 		// write the content into xml file
 		TransformerFactory transformerFactory = TransformerFactory.newInstance();
 		Transformer transformer = transformerFactory.newTransformer();
 		DOMSource source = new DOMSource(doc);
-		StreamResult result = new StreamResult(new File(System.getProperty("user.dir")+"/testNGxml.xml"));
+		StreamResult result = new StreamResult(new File(System.getProperty("user.dir")+"/testNG.xml"));
  
 		// Output to console for testing
 	
