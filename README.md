@@ -35,7 +35,7 @@ This is a page object model framework. Below are the features that are incorpora
 
 13) Bug Tracking Tool integration - Yet to Start
         
-        i) QC
+        i) QC   -- Completed and Committed
         
         ii) Bugzilla
         
