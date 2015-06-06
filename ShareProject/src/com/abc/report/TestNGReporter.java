@@ -15,6 +15,7 @@ import org.testng.xml.XmlSuite;
 
 public class TestNGReporter implements IReporter{
 
+	
 public void generateReport(List<XmlSuite> arg0, List<ISuite> arg1, String outputDirectory) {
 
 		// Second parameter of this method ISuite will contain all the suite executed.
