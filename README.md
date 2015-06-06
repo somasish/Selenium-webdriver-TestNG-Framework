@@ -33,7 +33,7 @@ This is a page object model framework. Below are the features that are incorpora
 
 12) HTML End Report Generation- Yet to Start
 
-13) Bug Tracking Tool integration - Yet to Start
+13) Bug Tracking Tool integration - InProgress
         
         i) QC   -- Completed and Committed
         
