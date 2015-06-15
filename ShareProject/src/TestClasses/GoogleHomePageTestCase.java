@@ -20,7 +20,10 @@ public class GoogleHomePageTestCase {
 	public void SearchTest()
 	{
 		SeleniumRepo.GoToUrl(PropertyFileRead.FileRead("ProjectData.properties","GoogleSiteURL"));
-		
+		//Click on the search Box
+		SeleniumRepo.click(PropertyFileRead.FileRead("ProjectData.properties","SearchBox"));
+		//Enter Text to the search Box
+		SeleniumRepo.enterText(PropertyFileRead.FileRead("ProjectData.properties","SearchBox"),"Selenium Webdriver");
 	}
 	
 	
