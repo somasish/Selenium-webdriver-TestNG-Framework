@@ -19,7 +19,7 @@ public class TestNGReporter implements IReporter{
 public void generateReport(List<XmlSuite> arg0, List<ISuite> arg1, String outputDirectory) {
 
 		// Second parameter of this method ISuite will contain all the suite executed.
-
+/*
 	for (ISuite iSuite : arg1) {
 
 //Get a map of result of a single suite at a time
@@ -60,5 +60,5 @@ System.out.println("TESTCASE NAME->"+iTestNGMethod.getMethodName()+"\nDescriptio
 			 
 		     }
 	
-}
+*/}
 		}

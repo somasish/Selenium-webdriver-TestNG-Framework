@@ -79,7 +79,7 @@ public static WebDriver startBrowser(String browserName, boolean FirefoxBrowserP
 			windowHandlers.clear();
 
 		windowHandlers.add(driver.getWindowHandle());
-		
+		driver.manage().window().maximize();
 		return driver;
 	
 	}
