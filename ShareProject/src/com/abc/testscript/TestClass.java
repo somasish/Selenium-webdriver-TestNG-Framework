@@ -1,4 +1,4 @@
-package TestClasses;
+package com.abc.testscript;
 
 import com.abc.util.PropertyFileRead;
 

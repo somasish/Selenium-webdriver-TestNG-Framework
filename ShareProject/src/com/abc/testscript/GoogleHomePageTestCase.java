@@ -1,4 +1,4 @@
-package TestClasses;
+package com.abc.testscript;
 import java.net.UnknownHostException;
 
 import org.testng.annotations.Test;
