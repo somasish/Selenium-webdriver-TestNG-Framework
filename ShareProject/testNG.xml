@@ -2,9 +2,17 @@
 <suite name="Suite" parallel="none">
 	<test name="Test" preserve-order="true">
 		<classes>
-			<class name="com.abc.testscript.">
+				
+			<class name="com.abc.testscript.TC001ValidateFormTestCase">
 				<methods>
-					<include name="" />      
+					<include name="FormValidationTest" />      
+					
+				</methods>
+			</class>
+			<class name="com.abc.testscript.TC002MapSearchPage">
+				<methods>
+					<include name="SearchPageTest" />      
+					
 				</methods>
 			</class>
 		</classes>
