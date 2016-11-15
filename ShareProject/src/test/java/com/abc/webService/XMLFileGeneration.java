@@ -18,7 +18,7 @@ import org.w3c.dom.Element;
  
 public class XMLFileGeneration {
  
-	public static void main(String argv[]) {
+	public static void xmlgenerate(){ 
  
 	  try {
  

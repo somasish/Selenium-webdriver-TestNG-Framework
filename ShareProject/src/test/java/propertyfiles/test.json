@@ -1,0 +1,18 @@
+{
+  "id": 1,
+  "firstname": "Trump",
+  "languages": [
+    {
+      "lang": "en",
+      "knowledge": "proficient"
+    },
+    {
+      "lang": "fr",
+      "knowledge": "advanced"
+    }
+  ],
+  "job": {
+    "site": "www.google.com",
+    "name": "Java Code"
+  }
+}
