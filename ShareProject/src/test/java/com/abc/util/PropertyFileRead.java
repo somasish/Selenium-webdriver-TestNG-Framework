@@ -32,7 +32,7 @@ public class PropertyFileRead {
 	{
 		try {
 			 		
-			 InputStream FilePath =  PropertyFileRead.class.getResourceAsStream("/resources/"+FileName);
+			 InputStream FilePath =  PropertyFileRead.class.getResourceAsStream("/propertyfiles/"+FileName);
 				 
 			// load a properties file
 			PropDetails.load(FilePath);
