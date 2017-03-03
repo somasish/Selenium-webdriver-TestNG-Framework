@@ -2,7 +2,9 @@
 
 #Install
 
-Clone and import the project as existing Maven project.
+Clone and import the project as existing Maven project in any Java IDE.
+you can run the program using any IDE like Eclipse or IntelliJ or from Jenkins but Ensure Maven plugin is available. 
+Run the program by using the command - clean install exec:java
 
 # Introduction
 Selenium TestNG Framework (Maven Project)
