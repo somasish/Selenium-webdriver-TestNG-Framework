@@ -33,15 +33,15 @@ This is a page object model framework. Below are the features that are incorpora
 
 8) XML File Generation Example TestNG.XML
 
-9) Web Services Testing Like Soap and Rest- Yet to Start
+9) Web Services Testing Like Soap and Rest
 
 10)TestNG Listener Implementation
 
 11)TestNG Reporter Implementataion 
 
-12) HTML End Report Generation- Yet to Start
+12) HTML End Report Generation- InComplete
 
-13) Bug Tracking Tool integration - Yet to Start
+13) Bug Tracking Tool integration - InComplete
         
         i) QC  
         
@@ -51,19 +51,19 @@ This is a page object model framework. Below are the features that are incorpora
         
         iv) Jira
 
-14) Email Connection - Completed and Committed
+14) Email Connection 
 
-15) Folder Creation with Time Stamp - Completed and Committed
+15) Folder Creation with Time Stamp 
 
-16) TestNG Assertion - Yet to Start
+16) TestNG Assertion 
 
 17) TestNg Annotations and DataProvider 
 
-18) Selenium Grid Implementation- Yet to Start
+18) Selenium Grid Implementation- InComplete
 
-19) Reading a Response XML- Yet to Start
+19) Reading a Response XML
 
-20) Image Comparision - Completed and Committed
+20) Image Comparision 
 
 21) Firefox geckodriver included
 
@@ -114,7 +114,12 @@ Understanding Various Packages included and its use
      Final step will be enter something on the textbox so we will call entertext method from the seleniumrepo and pass the locator and the text to be entered as parameter.
      various kind of validation/assertion can be done by looking into the return type of these seleniumrepo methods. Please go through the sample testscript to understand further.
   
-9) propertyfile
+9) Data Provider Package (com.abc.dataprovider)
+       
+        DataProvider using an Excel feature has been added recently. Here we are using a file data.xls(Path of the Excel is hardcoded in file ExcelDataProvider.java). Dynamically this excel is read and no of colums are data for each script run. Each rows in the excel is one set of data for a indivisual run. Please open the data.xls. You can notice that 1st row is the heading and row number 2 onwards are indivisual data set for each script.
+        Inorder to access the data in the script object of the class ExcelDataProviderObject is declared and ExcelDataProviderObject.DataArray gives you a array list which contains all the column data of a particular row in a serial manner. Example if the excel have 3 rows and 5 column then the script will run 3 times as it has 3 rows and on each run ExcelDataProviderObject.DataArray will be a arraylist which contains all the 5 column data in serial manner. Implementaion example is available in TC002MapSearchPage.java's SearchPageTest method.
+  
+10) propertyfile
 
         Here we keep all our property files and other excel files for read. Property file are maintained in a key-value pair. We have data like db detail, browsertype and other that are to be used by the scripts.
         
