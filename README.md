@@ -118,5 +118,73 @@ Understanding Various Packages included and its use
 
         Here we keep all our property files and other excel files for read. Property file are maintained in a key-value pair. We have data like db detail, browsertype and other that are to be used by the scripts.
         
+#How Scripting is done
+
+        The most important question is how the scripting is done. Let us take one example in file TC002MapSearchPage.java and Method name is SearchPageTest. In this method below is the structure
+                @Test(dataProviderClass = com.abc.dataprovider.ExcelDataProvider.class,dataProvider="getGoogleMapsData")
+                    public void SearchPageTest(ExcelDataProviderObject DPObj) throws InterruptedException
+                    {       // Code Goes here
+                }
+        In the above line the test annotation is mentioned and dataprovider class is mapped with the dataprovider name as “getGoogleMapsData”. You can write your own customized dataprovider as mentioned in com.abc.dataprovider.ExcelDataProvider.java file (2 examples are given). The above structure is maintained for all the scripts. If you want to write a new script then copy the above code and change the method name and your custom dataprovider if you want. Place the method in a specific file. Now you need to give the java file name and method name in testing.xml file. Please look into that file to find out how it is done.
+        Now once the structure of the test method is ready. Now we need to script. This script goes to Google Map page and then enters 2 different place name in the textbox and then it searches for that.
+
+        step 1 is to Navigate to specific url for that I will use below code. (Note: Framework will automatically start and close the browser. So our scripting willll start directly from step of URL Navigation)
+                SeleniumRepo.GoToUrl(“http://maps.google.com”);
+        Instread of hardcoding the url I am giving it from the property file. Property files are stored in key value pairs. So below code will read a property file with name “ProjectData.properties” and then it will search for a key “TS02SiteURLNavigation” and return the value of the key (for our case it’s a URL)
+                PropertyFileRead.FileRead("ProjectData.properties","TS02SiteURLNavigation").
+        Now the over all navigation should look like
+                SeleniumRepo.GoToUrl(PropertyFileRead.FileRead("ProjectData.properties","TS02SiteURLNavigation"));
+
+        Step 2 is clicking into the textbox.
+                SeleniumRepo.click(PropertyFileRead.FileRead("ProjectData.properties","MapDirection"));
+        Now the above click method requires a locator as parameter. So it will read the locator and click on that. The Locator is provided from the property file. In the above case the file name is “ProjectData.properties” and key is “MapDirection”. 
+        Please check the key “MapDirection” in the “ProjectData.properties” file as it will give you an idea that how the locators are stored. They are stored in a manner - MapDirection=id==searchbox-directions. Here ‘MapDirection’ is the key and ‘id==searchbox-directions’ is the value. This value again is splited internally into two parts using ‘==’ one is the type of locator i.e id in above example and 2nd part is locator as per the page i.e ‘searchbox-directions’. 
+        Some other examples are MapSearchButton=class==searchbox-searchbutton. Here key is ‘MapSearchButton’, LocatorType is ‘class’ and Locator is ‘searchbox-searchbutton’.
+        Another Example GetStartedButton=xpath==html/body/div[1]/div[3]/div[8]/span/form/div[32]/span/button. Here Key is ‘GetStartedButton’, LocatorType is ‘xpath’ and Locator is ’ html/body/div[1]/div[3]/div[8]/span/form/div[32]/span/button’.
+
+        Step 3 – Entering text in textbox
+                Method: SeleniumRepo.enterText()
+        The above method takes 2 parameter one is locator of the textbox which we will again pass from the property file and 2nd parameter is the text to be entered. So code should look like
+                SeleniumRepo.enterText(PropertyFileRead.FileRead("ProjectData.properties","MapFromSearch"),”Bangalore”);
+        In the above code the text is hardcoded but we don’t follow that we use a dataprovider. So the data is received as an arraylist DPObj.DataArray.get(0). So this will give us 1st element of the arraylist i.e is the 1st column in the excel file. Here DPObj is the dataprovider object declared abd DataArray is the defined arraylist to get all the data. So the code becomes like this
+                SeleniumRepo.enterText(PropertyFileRead.FileRead("ProjectData.properties","MapFromSearch"),DPObj.DataArray.get(0));
+        Same step is repeated for the 2nd textbox
+                SeleniumRepo.enterText(PropertyFileRead.FileRead("ProjectData.properties","MapToSearch"),DPObj.DataArray.get(1));
+
+        Step 4 – 
+        Click on the search button.
+                SeleniumRepo.click(PropertyFileRead.FileRead("ProjectData.properties","MapSearchButtons"));
+        Here we are passing the locator to be clicked from the property file.
+        So this ends our scripting.
+        Now the question is how the assertion and validations are done. For that we have if, else condition through out the script and we have specific method to check if the element is present or not
+                SeleniumRepo.isElementPresent(PropertyFileRead.FileRead("ProjectData.properties","MapDirection"))
+        Above Method checks if element is present or not. Locator is passed as parameter using the property file.
+        I would strongly advice to go through the script I am explaining and go through the methods available in seleniumrepository package. This would clear most of the doubts.
+
+
+#What happens when a build is triggered
+
+        Step 1.
+        Build is triggered through Maven by using the command- clean install exec:java
         
+        Step 2.
+        It triggers the testNG.xml. testNG.xml file have 2 script mapped
+            i)  Classname: com.abc.testscript.TC001ValidateFormTestCase 
+        Methodname (This is the script and this code will execute): FormValidationTest
+            ii) Classname: com.abc.testscript.TC002MapSearchPage
+        Methodname (This is the script and this code will execute): SearchPageTest
+        Both the script will execute one after another. 
+        It’s advisable to dynamically generate this file in your project so that you can have control over the testing suite that you want to run.
+        For me I have implemented it using a database with table which contains all my scripts id. It also have a column with name as run with values Y/N. Every time during the start I pick all the script id’s with Y flag and generate the testing xml dynamically. You can also find sample testing.xml file generator in com.abc.webService. XMLFileGeneration.java .
+       
+        Step 3.
+        Prior to script start below methods runs
+            i)  Listener onStart method – You can configure your one time database connections.
+            ii) TestNG BeforeTest (This method will run before every script. In our case 2 times it will run once before script1 and again before script2) – It starts a browser. Before browser start if any proxy is configured then it is set and all the temporary files in the system is cleaned. So that browser can have a clean and fresh session.
+
+        Step 4.
+        Then the 1st script is executed. In order to execute the script, you require data to the script. So, data provider has been configured. It has been configured using an excel sheet. Each row in the excel sheet is a set of data and each column are individual data for a specific row.
+        After Execution of the script below methods executes
+        i)  TestNG AfterTest Method- It closes the browser instance 
+        ii) Listner onFinish Method: It can be used to destroy any connection object
  
