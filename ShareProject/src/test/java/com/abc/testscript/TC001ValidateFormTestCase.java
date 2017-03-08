@@ -14,6 +14,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.AfterTest;
 import org.testng.Assert;
 
+import com.abc.projectpage.TestngAnnotations;
 import com.abc.seleniumrepository.SeleniumRepo;
 import com.abc.seleniumrepository.SeleniumRepoCheckBox;
 import com.abc.seleniumrepository.SeleniumRepoDropdown;
@@ -24,7 +25,7 @@ import com.abc.util.PropertyFileRead;
  * Search related functionality testcases
  */
 
-public class TC001ValidateFormTestCase {
+public class TC001ValidateFormTestCase extends TestngAnnotations {
 	
 	
 	@BeforeMethod
@@ -50,7 +51,7 @@ public class TC001ValidateFormTestCase {
 	}
 	/**
 	 * @author somasish
-	 * Search Suggestion Test
+	 * Goes to a specific site and performs Search Suggestion Test
 	 * @throws InterruptedException 
 	 */
 	@Test

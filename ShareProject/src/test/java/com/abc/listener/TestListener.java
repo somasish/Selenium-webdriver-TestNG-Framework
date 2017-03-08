@@ -37,5 +37,19 @@ super();
 }
 
 
+/*************************************************************
+ * @author :Somasish
+ * @Method_Name: onFinish
+ * @Description : Overriding the onFinish Method for closing any browser instance and connection objects
+ ************************************************************/
 
+@Override
+		public void onFinish(ITestContext testContext) {
+	System.out.println("Execution Completed");
+	//Load the Property files
+	// Ensure all browser instance are closed
+	// Ensure you disconnected from the all open connection object
+	
+	
+}
 }
