@@ -123,7 +123,7 @@ Understanding Various Packages included and its use
 
         Here we keep all our property files and other excel files for read. Property file are maintained in a key-value pair. We have data like db detail, browsertype and other that are to be used by the scripts.
         
-#How Scripting is done
+# How Scripting is done
 
         The most important question is how the scripting is done. Let us take one example in file TC002MapSearchPage.java and Method name is SearchPageTest. In this method below is the structure
                 @Test(dataProviderClass = com.abc.dataprovider.ExcelDataProvider.class,dataProvider="getGoogleMapsData")
@@ -167,7 +167,7 @@ Understanding Various Packages included and its use
         I would strongly advice to go through the script I am explaining and go through the methods available in seleniumrepository package. This would clear most of the doubts.
 
 
-#What happens when a build is triggered
+# What happens when a build is triggered
 
         Step 1.
         Build is triggered through Maven by using the command- clean install exec:java
