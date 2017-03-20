@@ -107,16 +107,13 @@ This is a page object model framework. Below are the features that are incorpora
 
 8) TestScript Package(com.abc.testscript)
           
-       Understand the code of a sample testscript
+         Understand the code of a sample testscript
    
-       Each java file in this package have lot many method and each methods are indivisual testscript. Along with the Testscript we have 2 more methods i.e beforemethod and aftermethod which help us in starting and closing browser for each test. you can distiguish a testscript with these two methods by marking the annotaion @test just above a method.
-     
-       Now coming to the testscript. For example we have a script which will open a browser will navigate to a specific url, click on some button and enter some text. So my testscript code will contain 3-4 lines of code only. 1st line will be calling seleniumrepo.GotoURL and pass the url as parameter and As the url is present in the propertyfile so we will read through the property file and pass the one as parameter.Example SeleniumRepo.GoToUrl(PropertyFileRead.FileRead("ProjectData.properties","TS01SiteURLNavigation")); .
-     
-       our 2nd step is to click on a button so we will call the click method from seleniumrepo again and pass the locator as parameter. locator can be passed from property file or from the pageboject pages. Example SeleniumRepo.click(PropertyFileRead.FileRead("ProjectData.properties","FirstNameErr"));
-     
-       Final step will be enter something on the textbox so we will call entertext method from the seleniumrepo and pass the locator and the text to be entered as parameter.
-       various kind of validation/assertion can be done by looking into the return type of these seleniumrepo methods. Please go through the sample testscript to understand further.
+            Each java file in this package have lot many method and each methods are indivisual testscript. Along with the Testscript we have 2 more methods i.e beforemethod and aftermethod which help us in starting and closing browser for each test. you can distiguish a testscript with these two methods by marking the annotaion @test just above a method.
+            Now coming to the testscript. For example we have a script which will open a browser will navigate to a specific url, click on some button and enter some text. So my testscript code will contain 3-4 lines of code only. 1st line will be calling seleniumrepo.GotoURL and pass the url as parameter and As the url is present in the propertyfile so we will read through the property file and pass the one as parameter.Example SeleniumRepo.GoToUrl(PropertyFileRead.FileRead("ProjectData.properties","TS01SiteURLNavigation")); .
+            our 2nd step is to click on a button so we will call the click method from seleniumrepo again and pass the locator as parameter. locator can be passed from property file or from the pageboject pages. Example SeleniumRepo.click(PropertyFileRead.FileRead("ProjectData.properties","FirstNameErr"));
+            Final step will be enter something on the textbox so we will call entertext method from the seleniumrepo and pass the locator and the text to be entered as parameter.
+            various kind of validation/assertion can be done by looking into the return type of these seleniumrepo methods. Please go through the sample testscript to understand further.
   
 9) Data Provider Package (com.abc.dataprovider)
        
