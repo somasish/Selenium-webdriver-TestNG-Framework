@@ -35,11 +35,11 @@ This is a page object model framework. Below are the features that are incorpora
 
 9) Web Services Testing Like Soap and Rest
 
-10)TestNG Listener Implementation
+10) TestNG Listener Implementation
 
-11)TestNG Reporter Implementataion 
+11) TestNG Reporter Implementataion 
 
-12) HTML End Report Generation- InComplete
+12) HTML End Report Generation- Sample is added. Required to be modified as per the project/requirement
 
 13) Bug Tracking Tool integration - InComplete
         
@@ -59,7 +59,7 @@ This is a page object model framework. Below are the features that are incorpora
 
 17) TestNg Annotations and DataProvider 
 
-18) Selenium Grid Implementation- InComplete
+18) Selenium Grid Implementation- Required to be added as per project/ Requirement
 
 19) Reading a Response XML
 
