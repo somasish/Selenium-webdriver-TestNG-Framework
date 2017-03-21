@@ -134,7 +134,7 @@ This is a page object model framework. Below are the features that are incorpora
         In the above line the test annotation is mentioned and dataprovider class is mapped with the dataprovider name as “getGoogleMapsData”. You can write your own customized dataprovider as mentioned in com.abc.dataprovider.ExcelDataProvider.java file (2 examples are given). The above structure is maintained for all the scripts. If you want to write a new script then copy the above code and change the method name and your custom dataprovider if you want. Place the method in a specific file. Now you need to give the java file name and method name in testing.xml file. Please look into that file to find out how it is done.
         Now once the structure of the test method is ready. Now we need to script. This script goes to Google Map page and then enters 2 different place name in the textbox and then it searches for that.
 
-        step 1 is to Navigate to specific url for that I will use below code. (Note: Framework will automatically start and close the browser. So our scripting willll start directly from step of URL Navigation)
+        step 1 is to Navigate to specific url for that I will use below code. (Note: Framework will automatically start and close the browser. So our scripting will start directly from step of URL Navigation)
                 SeleniumRepo.GoToUrl(“http://maps.google.com”);
         Instread of hardcoding the url I am giving it from the property file. Property files are stored in key value pairs. So below code will read a property file with name “ProjectData.properties” and then it will search for a key “TS02SiteURLNavigation” and return the value of the key (for our case it’s a URL)
                 PropertyFileRead.FileRead("ProjectData.properties","TS02SiteURLNavigation").
@@ -143,7 +143,7 @@ This is a page object model framework. Below are the features that are incorpora
 
         Step 2 is clicking into the textbox.
                 SeleniumRepo.click(PropertyFileRead.FileRead("ProjectData.properties","MapDirection"));
-        Now the above click method requires a locator as parameter. So it will read the locator and click on that. The Locator is provided from the property file. In the above case the file name is “ProjectData.properties” and key is “MapDirection”. 
+        Now the above "click" method in SeleniumRepo.java(Please check all the method available in this java file.) file requires a locator as parameter. So it will read the locator and click on that. The Locator is provided from the property file. In the above case the file name is “ProjectData.properties” and key is “MapDirection”. 
         Please check the key “MapDirection” in the “ProjectData.properties” file as it will give you an idea that how the locators are stored. They are stored in a manner - MapDirection=id==searchbox-directions. Here ‘MapDirection’ is the key and ‘id==searchbox-directions’ is the value. This value again is splited internally into two parts using ‘==’ one is the type of locator i.e id in above example and 2nd part is locator as per the page i.e ‘searchbox-directions’. 
         Some other examples are MapSearchButton=class==searchbox-searchbutton. Here key is ‘MapSearchButton’, LocatorType is ‘class’ and Locator is ‘searchbox-searchbutton’.
         Another Example GetStartedButton=xpath==html/body/div[1]/div[3]/div[8]/span/form/div[32]/span/button. Here Key is ‘GetStartedButton’, LocatorType is ‘xpath’ and Locator is ’ html/body/div[1]/div[3]/div[8]/span/form/div[32]/span/button’.
