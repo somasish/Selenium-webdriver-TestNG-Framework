@@ -194,4 +194,4 @@ This is a page object model framework. Below are the features that are incorpora
         i)  TestNG AfterTest Method- It closes the browser instance 
         ii) Listner onFinish Method: It can be used to destroy any connection object
  
- Note: Before triggering the Build do validate the POM.Xml placed in root of the folder. Because the Maven and other dependency version may be old or a mismatch. 
+ Note: Before triggering the Build do validate the POM.xml placed in root of the folder. Because the Maven and other dependency version may be old or a mismatch. 
