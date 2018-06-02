@@ -41,16 +41,10 @@ This is a page object model framework. Below are the features that are incorpora
 
 12) HTML End Report Generation- Sample is added. Required to be modified as per the project/requirement
 
-13) Bug Tracking Tool integration - InComplete
+13) Bug Tracking Tool integration - 
         
         i) QC  
-        
-        ii) Bugzilla
-        
-        iii) Rally
-        
-        iv) Jira
-
+ 
 14) Email Connection 
 
 15) Folder Creation with Time Stamp 
@@ -69,11 +63,11 @@ This is a page object model framework. Below are the features that are incorpora
 
 # How to use
 
-      Understanding Various Packages included and its use
+      Understanding Various Packages included and its use. Please import this Maven project to any IDE. So that you can browse the packages and understand the description mentioned.
 
 1) database package (com.abc.database)
 
-        it have a code for retriving single and multiple rows from the database. Database connection details are taken from the property file (DBDetails.property). Passing proper value from property file will automatically connect to the db and return you the result set in proper manner. If your requirement is of a singleton class. Please open a case so that i can assist you accordingly
+        it contains code for retriving single and multiple rows from the database. Database connection details are taken from the property file (DBDetails.property). Passing proper value from property file will automatically connect to the db and return you the result set in proper manner. If your requirement is of a singleton class. Please open a case so that i can assist you accordingly
         
 2) listener package ( com.abc.listener) TestNG Listner
 
