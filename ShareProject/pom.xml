@@ -99,6 +99,13 @@
 			<artifactId>mail</artifactId>
 			<version>1.4.5</version>
 		</dependency>
+	  <-- This is added since no selenium jars are not available for cloned projects --> 
+	  		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>4.0.0</version>
+		</dependency>
+	  
 		<dependency>
 	<groupId>com.googlecode.json-simple</groupId>
 	<artifactId>json-simple</artifactId>
