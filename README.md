@@ -189,4 +189,4 @@ This is a page object model framework. Below are the features that are incorpora
         ii) Listner onFinish Method: It can be used to destroy any connection object
  
  # Note: 
- Before triggering the Build do validate the POM.xml placed in root of the folder. Because the Maven and other dependency version may be old or a mismatch. Also take a recent copy of IEDriverServer.exe, chromedriver.exe and geckodriver.exe
+ Before triggering the Build do validate the POM.xml placed in root of the folder. Because the Maven and other dependency version may be old or a mismatch. Also take a recent copy of IEDriverServer.exe, chromedriver.exe and geckodriver.exe. Also feel free to add newer selenium version in pom.xml. All these code are completely compartable with newer version of selenium.
