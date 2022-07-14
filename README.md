@@ -63,7 +63,7 @@ This is a page object model framework. Below are the features that are incorpora
 
 # How to use
 
-      Understanding Various Packages included and its use. Please import this Maven project to any IDE. So that you can browse the packages and understand the description mentioned.
+      We have to understand various packages included and its use. Please import this Maven project to any IDE. So that you can browse the packages and understand the description mentioned.
 
 1) database package (com.abc.database)
 
